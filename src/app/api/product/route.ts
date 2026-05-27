@@ -1,16 +1,15 @@
 import { NextResponse } from "next/server";
 
 export async function GET(){
-   // Logic of fetching data
-    const response = await fetch(process.env.NEXT_PUBLIC_BASE_ISHOP_API_URL + '/products');
+    //logic on fetching data
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_ISHOP_API_URL}/products`);
     const data = await response.json();
+    // console.log("GET DATA : ",data)
     if(response?.ok){
         return NextResponse.json({
-            success: true,
+            success:true,
             data
         })
     }
-    return NextResponse.json({error: "Sorry fetching error"},
-        {status: 500}
-    )
+    return NextResponse.json({error:"Failed to fetch product data."},{status:500})
 }

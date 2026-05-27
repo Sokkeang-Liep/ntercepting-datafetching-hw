@@ -16,6 +16,7 @@ async function getProducts() {
     console.log("Data from /dashboard/products", data);
     return data;
   } catch (error) {
+     console.error(error);
     throw new Error("Failed to fetching data from /dashboard/products");
   }
 }

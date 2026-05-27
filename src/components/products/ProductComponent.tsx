@@ -1,19 +1,21 @@
 import { ProductType } from "@/lib/product-type/product";
 import { Card } from "flowbite-react";
+import Link from "next/link";
 
 
-export default function ProductComponent({thumbnail, name, priceOut}:ProductType) {
+export default function ProductComponent({thumbnail, name, priceOut, uuid}:ProductType) {
   return (
+    <Link href={`/dashboard/products/${uuid}`}>
     <Card
       className="max-w-sm"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
       imgSrc={thumbnail}
     >
-      <a href="#">
+     
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {name}
         </h5>
-      </a>
+  
       <div className="mb-5 mt-2.5 flex items-center">
         <svg
           className="h-5 w-5 text-yellow-300"
@@ -61,13 +63,14 @@ export default function ProductComponent({thumbnail, name, priceOut}:ProductType
       </div>
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">${priceOut}</span>
-        <a
-          href="#"
+        <button
+         
           className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
         >
           Add to cart
-        </a>
+        </button>
       </div>
     </Card>
+    </Link>
   )
 }

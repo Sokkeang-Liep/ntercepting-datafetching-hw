@@ -5,7 +5,7 @@ export function NavBarComponent() {
   return (
     <Navbar fluid rounded className="px-6 py-3">
       
-      {/* Logo + Brand */}
+     
       <NavbarBrand href="/" className="flex items-center gap-3">
         <Image
           src="https://staunchmen.com/wp-content/uploads/2025/01/Staunch-Men-Clothing-co-Logo-Online-Men-Fashion-Shop-In-Lekki-Boutique-in-Lekki-Lekki-Best-Clothing-Shop-Mens-Clothing-Shoes-In-Lekki-Clothing-.png"

@@ -14,7 +14,7 @@ async function getProducts() {
     return products;// data fetch api which display
 
 
-  } catch (error) {
+  } catch {
     throw new Error("Fail to fetch")
   }
 }

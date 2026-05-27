@@ -32,6 +32,7 @@ function LoadingSuspenseComponent(){
 
   )
 }
+
 export default function ProductPageRoute() {
   return (
     <div>
@@ -48,7 +49,7 @@ export default function ProductPageRoute() {
   )
 }
 
-function ProductRenderingProcess() {
+export function ProductRenderingProcess() {
 
   // using use hook to fetch data from server
   const { data: products } = use(getProducts())

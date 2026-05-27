@@ -3,7 +3,7 @@
 export default function CreateComponentDisplay(){
     return (
         <div>
-            The real place of Create
+             Welcome to final place of create
         </div>
     )
 }

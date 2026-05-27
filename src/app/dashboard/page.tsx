@@ -3,7 +3,9 @@
 export default function DashBoardHomePage(){
     return (
         <div>
-            hiiiiii
+            This is Dashboard Home Page 
         </div>
     )
 }
+
+

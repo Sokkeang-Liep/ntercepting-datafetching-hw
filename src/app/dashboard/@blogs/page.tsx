@@ -2,6 +2,6 @@
 
 export default function BlogPage() {
   return (
-    <div>Blog Page</div>
+    <div> Component for Blog Render Here </div>
   )
 }

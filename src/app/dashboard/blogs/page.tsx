@@ -5,7 +5,7 @@
 export default function BlogsInDashBoardPage() {
   return (
     <div>
-        Welcome Blog page
+       Welcome to Blog Page Part
     </div>
   )
 }

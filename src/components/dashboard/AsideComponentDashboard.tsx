@@ -21,15 +21,15 @@ const pathName = usePathname();
 
             {/* blogs */}
           <SidebarItem href="/dashboard/blogs" icon={HiUser} 
-          className={pathName == "/dashboard/blogs"?  `bg-blue-500 rounded`:""}>
+          className={pathName == "/dashboard/blogs"?  `bg-blue-200 rounded`:""}>
             Blogs
           </SidebarItem>
           <SidebarItem href="/dashboard/products" icon={HiShoppingBag}
-          className={pathName == "/dashboard/products"? `bg-blue-500 rounded`: ""}>
+          className={pathName == "/dashboard/products"? `bg-blue-200 rounded`: ""}>
             Products
           </SidebarItem>
           <SidebarItem href="/dashboard/setting" icon={HiArrowSmRight}
-          className={pathName == "/dashboard/setting"? `bg-blue-500 rounded`: ""}>
+          className={pathName == "/dashboard/setting"? `bg-blue-200 rounded`: ""}>
             Setting
           </SidebarItem>
         </SidebarItemGroup>

@@ -3,6 +3,6 @@
 
 export default function SettingPage() {
   return (
-    <div>Setting Page</div>
+    <div> Components for setting Render Here</div>
   )
 }

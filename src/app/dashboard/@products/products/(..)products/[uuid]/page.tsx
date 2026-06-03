@@ -23,7 +23,7 @@ export default async function ProductDetailModal({
 
 export async function fetchDetail(uuid: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/product/${uuid}`, {
+    const res = await fetch(`https://ntercepting-datafetching-hw.vercel.app/api/product/${uuid}`, {
       cache: "no-store",
     });
 

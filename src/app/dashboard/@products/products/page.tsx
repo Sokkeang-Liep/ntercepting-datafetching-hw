@@ -81,7 +81,7 @@ export function ProductRenderingProcess() {
   // const data = use(getProducts());
   const {
     data: products
-  } = useSWR("http://localhost:3000/api/product", fetcher, {
+  } = useSWR("https://ntercepting-datafetching-hw.vercel.app/api/product", fetcher, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
     revalidateOnReconnect: false,

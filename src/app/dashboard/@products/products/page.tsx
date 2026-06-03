@@ -90,14 +90,15 @@ export function ProductRenderingProcess() {
   console.log("THIS IS DATA", products);
   return (
     <div>
-      <h1>All Product</h1>
+      
 
       <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
           {products?.data?.content?.map(
-            ({ thumbnail, name, priceOut,  uuid }: ProductType) => (
+            ({ thumbnail, name, priceOut,  description, uuid }: ProductType) => (
               <Link key={uuid} href={`/dashboard/products/${uuid}`}>
                 <ProductComponent
+                  description={description}
                   uuid={uuid}
                   thumbnail={thumbnail}
                   name={name}

@@ -11,6 +11,7 @@ export function ProductDetailModalComponent({
   thumbnail,
   priceOut,
   name,
+  description
 
 }: ProductType) {
   const [openModal, setOpenModal] = useState(true);
@@ -46,7 +47,12 @@ export function ProductDetailModalComponent({
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">{name}</h1>
 
-        
+    
+              </div>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">{description}</h1>
+
+    
               </div>
             </div>
             <div className="mt-8 flex gap-3">

@@ -15,6 +15,7 @@ export default async function ProductDetailModal({
         priceOut={data.priceOut}
         name={data.name}
         uuid={data.uuid}
+        description={data.description}
       />
     </div>
   );

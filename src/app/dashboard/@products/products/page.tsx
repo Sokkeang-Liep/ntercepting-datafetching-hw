@@ -7,7 +7,7 @@ import { Suspense, use } from "react";
 async function getProducts() {
   try {
     const res = await fetch('http://localhost:3000/api/product', {
-      cache: 'no-store'
+       next: { revalidate: 60}
     })
     const products = await res?.json();
     console.log(`Product data: ${products?.content}`)
@@ -18,6 +18,7 @@ async function getProducts() {
     throw new Error("Fail to fetch")
   }
 }
+
 
 
 // loading suspense
@@ -56,8 +57,6 @@ export function ProductRenderingProcess() {
   return (
 
     <div>
-
-
       {/* display data from api here */}
       <div className="flex gap-5">
         {
@@ -76,3 +75,4 @@ export function ProductRenderingProcess() {
     </div>
   )
 }
+

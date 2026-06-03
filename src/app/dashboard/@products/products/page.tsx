@@ -1,24 +1,26 @@
+"use client";
+
 import ProductComponent from "@/components/products/ProductComponent";
 import { ProductType } from "@/lib/product-type/product";
 import Link from "next/link"
 import { Suspense, use } from "react";
+import useSWR from "swr";
 
-// async funciton to get products
-async function getProducts() {
-  try {
-    const res = await fetch('http://localhost:3000/api/product', {
-       next: { revalidate: 60}
-    })
-    const products = await res?.json();
-    console.log(`Product data: ${products?.content}`)
-    return products;// data fetch api which display
+// // async funciton to get products
+// async function getProducts() {
+//   try {
+//     const res = await fetch('http://localhost:3000/api/product', {
+//        next: { revalidate: 60}
+//     })
+//     const products = await res?.json();
+//     console.log(`Product data: ${products?.content}`)
+//     return products;// data fetch api which display
 
 
-  } catch {
-    throw new Error("Fail to fetch")
-  }
-}
-
+//   } catch {
+//     throw new Error("Fail to fetch")
+//   }
+// }
 
 
 // loading suspense
@@ -50,29 +52,62 @@ export default function ProductPageRoute() {
   )
 }
 
+// export function ProductRenderingProcess() {
+//   // using use hook to fetch data from server
+//   const { data: products } = use(getProducts())
+//   return (
+
+//     <div>
+//       {/* display data from api here */}
+//       <div className="flex gap-5">
+//         {
+//           products?.content?.map(({ uuid, thumbnail, priceOut, name }: ProductType) => (
+//             <ProductComponent
+//               uuid={uuid}
+//               key={uuid}
+//               thumbnail={thumbnail}
+//               priceOut={priceOut}
+//               name={name}
+//             />
+//           ))
+//         }
+
+//       </div>
+//     </div>
+//   )
+// }
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 export function ProductRenderingProcess() {
-
-  // using use hook to fetch data from server
-  const { data: products } = use(getProducts())
+  // const data = use(getProducts());
+  const {
+    data: products
+  } = useSWR("http://localhost:3000/api/product", fetcher, {
+    revalidateIfStale: false,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+    refreshInterval: 1000,
+  });
+  console.log("THIS IS DATA", products);
   return (
-
     <div>
-      {/* display data from api here */}
-      <div className="flex gap-5">
-        {
-          products?.content?.map(({ uuid, thumbnail, priceOut, name }: ProductType) => (
-            <ProductComponent
-              uuid={uuid}
-              key={uuid}
-              thumbnail={thumbnail}
-              priceOut={priceOut}
-              name={name}
-            />
-          ))
-        }
+      <h1>All Product</h1>
 
+      <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {products?.data?.content?.map(
+            ({ thumbnail, name, priceOut,  uuid }: ProductType) => (
+              <Link key={uuid} href={`/dashboard/products/${uuid}`}>
+                <ProductComponent
+                  uuid={uuid}
+                  thumbnail={thumbnail}
+                  name={name}
+                  priceOut={priceOut}
+                />
+              </Link>
+            ),
+          )}
+        </div>
       </div>
     </div>
-  )
+  );
 }
-

@@ -1,11 +1,11 @@
 import { ProductType } from "@/lib/product-type/product";
 import { Card } from "flowbite-react";
-import Link from "next/link";
+
 
 
 export default function ProductComponent({thumbnail, name, priceOut, uuid}:ProductType) {
   return (
-    <Link href={`/dashboard/products/${uuid}`}>
+    
     <Card
       className="max-w-sm"
       imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
@@ -71,6 +71,6 @@ export default function ProductComponent({thumbnail, name, priceOut, uuid}:Produ
         </button>
       </div>
     </Card>
-    </Link>
+   
   )
 }

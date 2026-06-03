@@ -15,6 +15,23 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'pngimg.com'
       },
+       {
+        protocol: "https",
+        hostname: "dev-portal.motforex.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.motforex.com",
+      },
+      {
+        protocol: "https",
+        hostname: "staunchmen.com",
+      },
+      {
+        protocol: "https",
+        hostname: "pnngrok.com", 
+      },
+      
       
     ]
   }

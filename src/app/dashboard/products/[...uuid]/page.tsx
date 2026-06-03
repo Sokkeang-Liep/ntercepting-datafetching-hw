@@ -1,8 +1,4 @@
 
-import { fetchDetail } from "../../@products/products/(..)products/[uuid]/page";
-import ProductDetailComponent from "@/components/products/ProductDetailComponent";
-import { ProductType } from "@/lib/product-type/product";
-
 import type { Metadata, ResolvingMetadata } from "next";
 
 type Props = {

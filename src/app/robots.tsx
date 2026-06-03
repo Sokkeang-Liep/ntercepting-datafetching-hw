@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'http://localhost:3000/sitemap.xml',
+    sitemap: 'https://ntercepting-datafetching-8wib2sd6k-sokkeang-lieps-projects.vercel.app/sitemap.xml',
   }
 }
